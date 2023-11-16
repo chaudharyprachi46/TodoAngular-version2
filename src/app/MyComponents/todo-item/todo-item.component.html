@@ -1,0 +1,21 @@
+<div class="card" style="margin:15px">
+    <div class="card-header" [ngClass]="{'strike':!todo.active}">
+        <h5>{{todo.title}}</h5>
+    </div>
+    <div class="card-body " >
+      <blockquote class="blockquote mb-0">
+        <p [ngClass]="{'strike':!todo.active}">{{todo.desc}}</p>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" 
+          (click)="onCheckBoxClick(todo)" [checked]="!todo.active"
+          >
+          <label class="form-check-label" for="flexCheckDefault">
+            Mark As Done
+          </label>
+        </div>
+        <button class="btn-close" 
+            style="float: right"
+            (click)="onDeleteClick(todo)"></button>
+      </blockquote>
+    </div>
+  </div>
